@@ -24,10 +24,12 @@ def fetch_contributions():
         data = json.loads(resp.read().decode())
 
     from datetime import datetime
-    import calendar
     monthly = {}
+    current_ym = datetime.now().strftime('%Y-%m')
     for day in data["contributions"]:
         ym = day["date"][:7]
+        if ym > current_ym:
+            continue
         monthly[ym] = monthly.get(ym, 0) + day["count"]
     
     # Sort and take last 5
@@ -37,14 +39,14 @@ def fetch_contributions():
     return last_5
 
 
-def generate_svg(monthly):
-    years = list(monthly.keys())
-    values = list(monthly.values())
-    n = len(years)
+def generate_svg(data_dict):
+    labels = list(data_dict.keys())
+    values = list(data_dict.values())
+    n = len(labels)
     total = sum(values)
     max_val = max(values)
-    # Round up max to nearest 50 for clean axis
-    y_max = ((max_val // 50) + 1) * 50
+    # Round up max to nearest 10 for clean axis, but at least 10
+    y_max = max(10, ((max_val // 10) + 1) * 10)
 
     # Layout
     chart_left = 100
@@ -52,7 +54,7 @@ def generate_svg(monthly):
     chart_top = 70
     chart_bottom = 250
     chart_height = chart_bottom - chart_top
-    bar_width = min(80, int((chart_right - chart_left - 40) / n) - 20)
+    bar_width = min(80, int((chart_right - chart_left - 40) / max(1, n)) - 20)
     total_bars_width = n * (bar_width + 20) - 20
     start_x = chart_left + (chart_right - chart_left - total_bars_width) // 2
 
@@ -61,7 +63,7 @@ def generate_svg(monthly):
     for i in range(n):
         ci = i % len(BAR_COLORS)
         c1, c2 = BAR_COLORS[ci]
-        gradients += f'''    <linearGradient id="bar{years[i]}" x1="0" y1="0" x2="0" y2="1">
+        gradients += f'''    <linearGradient id="bar{i}" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="{c1}"/>
       <stop offset="100%" stop-color="{c2}"/>
     </linearGradient>\n'''
@@ -80,7 +82,7 @@ def generate_svg(monthly):
 
     # Build bars
     bars = ""
-    for i, (year, val) in enumerate(zip(years, values)):
+    for i, (label, val) in enumerate(zip(labels, values)):
         ci = i % len(LABEL_COLORS)
         bar_h = (val / y_max) * chart_height
         bar_y = chart_bottom - bar_h
@@ -88,15 +90,14 @@ def generate_svg(monthly):
         center_x = bar_x + bar_width / 2
         dur = f"{0.6 + i * 0.1:.1f}s"
 
-        bars += f'''  <rect x="{bar_x}" y="{bar_y:.1f}" width="{bar_width}" height="{bar_h:.1f}" rx="4" fill="url(#bar{year})" filter="url(#glow)">
+        bars += f'''  <rect x="{bar_x}" y="{bar_y:.1f}" width="{bar_width}" height="{bar_h:.1f}" rx="4" fill="url(#bar{i})" filter="url(#glow)">
     <animate attributeName="height" from="0" to="{bar_h:.1f}" dur="{dur}" fill="freeze"/>
     <animate attributeName="y" from="{chart_bottom}" to="{bar_y:.1f}" dur="{dur}" fill="freeze"/>
   </rect>
   <text x="{center_x:.0f}" y="{bar_y - 8:.0f}" text-anchor="middle" fill="#f8f8f2" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="14" font-weight="600">{val}</text>
-  <text x="{center_x:.0f}" y="272" text-anchor="middle" fill="{LABEL_COLORS[ci]}" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="13" font-weight="600">{year}</text>
+  <text x="{center_x:.0f}" y="272" text-anchor="middle" fill="{LABEL_COLORS[ci]}" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="13" font-weight="600">{label}</text>
 '''
 
-    first_year = years[0]
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320">
   <defs>
 {gradients}    <filter id="glow">
@@ -131,11 +132,11 @@ def generate_svg(monthly):
 
 
 def main():
-    yearly = fetch_contributions()
-    svg = generate_svg(yearly)
+    monthly = fetch_contributions()
+    svg = generate_svg(monthly)
     with open("assets/contributions-by-year.svg", "w") as f:
         f.write(svg)
-    print(f"Generated chart with {len(yearly)} years: {list(monthly.keys())}")
+    print(f"Generated chart with {len(monthly)} months: {list(monthly.keys())}")
 
 
 if __name__ == "__main__":
