@@ -60,6 +60,8 @@
   <img src="./profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="3D Contribution Graph" />
 </div>
 
+---
+
 <div align="center">
   <img src="assets/footer.gif" width="100%" />
 </div>
