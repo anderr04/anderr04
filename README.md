@@ -29,7 +29,7 @@
 
 - 📍 Bilbao, Spain
 - 🎓 BSc **Physics** 
-- 🔬 Currently working with **a real fallout t60 armor and polymarket automatized bots**
+- 🔬 Currently working with **a real fallout T-60 armor and polymarket automatized bots**
 - 🎯 Building intelligent systems that actually work
 - 🐛 Putting my life in danger since 2017
 
@@ -60,4 +60,6 @@
   <img src="./profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="3D Contribution Graph" />
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer" width="100%" />
+<div align="center">
+  <img src="assets/footer.gif" width="100%" />
+</div>
