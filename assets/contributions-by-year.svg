@@ -46,43 +46,43 @@
 
   <!-- Y-axis labels -->
   <text x="90" y="254" text-anchor="end" fill="#6272a4" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="12">0</text>
-  <text x="90" y="209" text-anchor="end" fill="#6272a4" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="12">15</text>
-  <text x="90" y="164" text-anchor="end" fill="#6272a4" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="12">30</text>
-  <text x="90" y="119" text-anchor="end" fill="#6272a4" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="12">45</text>
-  <text x="90" y="74" text-anchor="end" fill="#6272a4" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="12">60</text>
+  <text x="90" y="209" text-anchor="end" fill="#6272a4" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="12">25</text>
+  <text x="90" y="164" text-anchor="end" fill="#6272a4" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="12">50</text>
+  <text x="90" y="119" text-anchor="end" fill="#6272a4" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="12">75</text>
+  <text x="90" y="74" text-anchor="end" fill="#6272a4" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="12">100</text>
 
   <!-- Bars -->
-  <rect x="170" y="187.0" width="80" height="63.0" rx="4" fill="url(#bar0)" filter="url(#glow)">
-    <animate attributeName="height" from="0" to="63.0" dur="0.6s" fill="freeze"/>
-    <animate attributeName="y" from="250" to="187.0" dur="0.6s" fill="freeze"/>
+  <rect x="170" y="212.2" width="80" height="37.8" rx="4" fill="url(#bar0)" filter="url(#glow)">
+    <animate attributeName="height" from="0" to="37.8" dur="0.6s" fill="freeze"/>
+    <animate attributeName="y" from="250" to="212.2" dur="0.6s" fill="freeze"/>
   </rect>
-  <text x="210" y="179" text-anchor="middle" fill="#f8f8f2" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="14" font-weight="600">21</text>
+  <text x="210" y="204" text-anchor="middle" fill="#f8f8f2" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="14" font-weight="600">21</text>
   <text x="210" y="272" text-anchor="middle" fill="#bd93f9" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="13" font-weight="600">2026-06</text>
-  <rect x="270" y="79.0" width="80" height="171.0" rx="4" fill="url(#bar1)" filter="url(#glow)">
-    <animate attributeName="height" from="0" to="171.0" dur="0.7s" fill="freeze"/>
-    <animate attributeName="y" from="250" to="79.0" dur="0.7s" fill="freeze"/>
+  <rect x="270" y="147.4" width="80" height="102.6" rx="4" fill="url(#bar1)" filter="url(#glow)">
+    <animate attributeName="height" from="0" to="102.6" dur="0.7s" fill="freeze"/>
+    <animate attributeName="y" from="250" to="147.4" dur="0.7s" fill="freeze"/>
   </rect>
-  <text x="310" y="71" text-anchor="middle" fill="#f8f8f2" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="14" font-weight="600">57</text>
+  <text x="310" y="139" text-anchor="middle" fill="#f8f8f2" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="14" font-weight="600">57</text>
   <text x="310" y="272" text-anchor="middle" fill="#8be9fd" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="13" font-weight="600">2026-07</text>
-  <rect x="370" y="130.0" width="80" height="120.0" rx="4" fill="url(#bar2)" filter="url(#glow)">
-    <animate attributeName="height" from="0" to="120.0" dur="0.8s" fill="freeze"/>
-    <animate attributeName="y" from="250" to="130.0" dur="0.8s" fill="freeze"/>
+  <rect x="370" y="178.0" width="80" height="72.0" rx="4" fill="url(#bar2)" filter="url(#glow)">
+    <animate attributeName="height" from="0" to="72.0" dur="0.8s" fill="freeze"/>
+    <animate attributeName="y" from="250" to="178.0" dur="0.8s" fill="freeze"/>
   </rect>
-  <text x="410" y="122" text-anchor="middle" fill="#f8f8f2" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="14" font-weight="600">40</text>
+  <text x="410" y="170" text-anchor="middle" fill="#f8f8f2" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="14" font-weight="600">40</text>
   <text x="410" y="272" text-anchor="middle" fill="#50fa7b" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="13" font-weight="600">2026-08</text>
-  <rect x="470" y="193.0" width="80" height="57.0" rx="4" fill="url(#bar3)" filter="url(#glow)">
-    <animate attributeName="height" from="0" to="57.0" dur="0.9s" fill="freeze"/>
-    <animate attributeName="y" from="250" to="193.0" dur="0.9s" fill="freeze"/>
+  <rect x="470" y="215.8" width="80" height="34.2" rx="4" fill="url(#bar3)" filter="url(#glow)">
+    <animate attributeName="height" from="0" to="34.2" dur="0.9s" fill="freeze"/>
+    <animate attributeName="y" from="250" to="215.8" dur="0.9s" fill="freeze"/>
   </rect>
-  <text x="510" y="185" text-anchor="middle" fill="#f8f8f2" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="14" font-weight="600">19</text>
+  <text x="510" y="208" text-anchor="middle" fill="#f8f8f2" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="14" font-weight="600">19</text>
   <text x="510" y="272" text-anchor="middle" fill="#ffb86c" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="13" font-weight="600">2026-09</text>
-  <rect x="570" y="94.0" width="80" height="156.0" rx="4" fill="url(#bar4)" filter="url(#glow)">
-    <animate attributeName="height" from="0" to="156.0" dur="1.0s" fill="freeze"/>
-    <animate attributeName="y" from="250" to="94.0" dur="1.0s" fill="freeze"/>
+  <rect x="570" y="77.2" width="80" height="172.8" rx="4" fill="url(#bar4)" filter="url(#glow)">
+    <animate attributeName="height" from="0" to="172.8" dur="1.0s" fill="freeze"/>
+    <animate attributeName="y" from="250" to="77.2" dur="1.0s" fill="freeze"/>
   </rect>
-  <text x="610" y="86" text-anchor="middle" fill="#f8f8f2" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="14" font-weight="600">52</text>
+  <text x="610" y="69" text-anchor="middle" fill="#f8f8f2" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="14" font-weight="600">96</text>
   <text x="610" y="272" text-anchor="middle" fill="#ff5555" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="13" font-weight="600">2026-10</text>
 
   <!-- Footer -->
-  <text x="400" y="300" text-anchor="middle" fill="#6272a4" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="11">Total: 189 contributions in the last 5 months</text>
+  <text x="400" y="300" text-anchor="middle" fill="#6272a4" font-family="'Segoe UI', Ubuntu, sans-serif" font-size="11">Total: 233 contributions in the last 5 months</text>
 </svg>
